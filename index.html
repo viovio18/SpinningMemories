@@ -6,10 +6,10 @@
 <title>Spinning Memories 📻</title>
 <style>
 /* ===== BASE ===== */
-body{font-family:'Courier New',Courier,monospace;color:#3e2723;margin:0;padding:20px 20px 260px;display:flex;flex-direction:column;align-items:center;
+body{font-family:'Courier New',Courier,monospace;color:#3e2723;margin:0;padding:64px 0 260px;display:flex;flex-direction:column;align-items:center;
   background-color:#f4ebd9;background-image:radial-gradient(rgba(141,110,99,.18) 1px,transparent 1px);background-size:18px 18px}
 h1{margin:0;font-size:2rem;color:#5d4037;text-shadow:2px 2px 0 #e0d0b4}
-header{text-align:center;margin-bottom:25px;border-bottom:2px dashed #8d6e63;padding-bottom:15px;width:100%;max-width:1100px;position:relative}
+header{text-align:center;margin-bottom:20px;border-bottom:2px dashed #8d6e63;padding-bottom:15px;width:100%;position:relative}
 .titulo-fila{display:flex;align-items:center;justify-content:center;gap:14px}
 .logo-disco{width:46px;height:46px;border-radius:50%;border:2px solid #1a0f0d;
   background:radial-gradient(circle,#fff8e7 12%,#d84315 14%,#d84315 26%,transparent 28%),conic-gradient(#111,#333,#111,#333,#111);animation:girar 5s linear infinite}
@@ -25,10 +25,11 @@ header{text-align:center;margin-bottom:25px;border-bottom:2px dashed #8d6e63;pad
 @keyframes invita{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
 .entra{animation:entra .5s ease backwards;animation-delay:calc(var(--i) * 80ms)}
 
-.sala-principal{display:flex;flex-wrap:wrap;gap:30px;max-width:1150px;width:100%;align-items:flex-start;margin-top:15px}
+:root{--margen:clamp(16px,5vw,90px)}
+.contenido{width:100%;max-width:1700px;padding:0 var(--margen);box-sizing:border-box}
 
 /* ===== FORMULARIO ===== */
-.formulario-caja{background:#fff8e7;border:2px solid #8d6e63;border-radius:10px;padding:20px;width:300px;box-shadow:5px 5px 0 #8d6e63;position:sticky;top:20px;animation:pop .6s ease}
+.formulario-caja{background:#fff8e7;border:2px solid #8d6e63;border-radius:10px;padding:20px 24px;box-shadow:5px 5px 0 #8d6e63;margin:0 6px 6px 0}
 .campo{margin-bottom:12px;display:flex;flex-direction:column}
 label{font-weight:bold;margin-bottom:4px;font-size:.85rem}
 input,select,textarea{font-family:inherit;padding:8px;border:1px solid #bcaaa4;border-radius:5px;background:#fff;transition:box-shadow .25s,border-color .25s}
@@ -39,40 +40,40 @@ button.btn-accion:active{transform:translateY(2px);box-shadow:0 1px 0 rgba(0,0,0
 .btn-full{width:100%;margin-top:5px}
 
 /* ===== PESTAÑAS Y MUEBLE ===== */
-.coleccion-zona{flex:1;min-width:340px;display:flex;flex-direction:column;gap:15px}
+.coleccion-zona{display:flex;flex-direction:column;gap:30px}
 .pestanas-coleccion{display:flex;gap:10px}
 .btn-pestana{flex:1;background:#d7ccc8;border:2px solid #8d6e63;color:#5d4037;padding:8px 10px;font-family:inherit;font-weight:bold;border-radius:6px 6px 0 0;cursor:pointer;transition:all .25s;font-size:.8rem}
 .btn-pestana:hover{background:#efe2cc;transform:translateY(-3px)}
 .btn-pestana.activo{background:#fff8e7;border-bottom-color:#fff8e7;color:#d84315;transform:translateY(-2px)}
-.mueble-contenedor{background:#fff8e7;border:3px solid #8d6e63;border-radius:0 8px 8px 8px;padding:25px;box-shadow:5px 5px 0 #8d6e63;min-height:250px}
+.mueble-contenedor{background:#fff8e7;border:3px solid #8d6e63;border-radius:8px;padding:25px 30px 30px;box-shadow:5px 5px 0 #8d6e63;animation:entra .7s ease backwards;animation-delay:calc(var(--b) * 150ms)}
 .mueble-titulo{margin:0 0 15px;font-size:1.1rem;color:#5d4037}
 
 /* Vinilos */
-.rack-vinilos{background:repeating-linear-gradient(90deg,rgba(255,255,255,.03) 0 2px,transparent 2px 9px),linear-gradient(180deg,#3e2723,#261815);border:6px solid #1a0f0d;border-radius:10px;padding:40px 25px 20px;display:flex;flex-wrap:wrap;gap:20px;min-height:190px;box-shadow:inset 0 15px 25px rgba(0,0,0,.7)}
-.vinilo-sleeve{width:140px;height:140px;border-radius:6px;position:relative;cursor:grab;box-shadow:-5px 5px 12px rgba(0,0,0,.6);transition:transform .35s ease;display:flex;flex-direction:column;justify-content:space-between;padding:12px;box-sizing:border-box;color:#fff;border:2px solid rgba(255,255,255,.25);
+.rack-vinilos{background:repeating-linear-gradient(90deg,rgba(255,255,255,.03) 0 2px,transparent 2px 9px),linear-gradient(180deg,#3e2723,#261815);border:6px solid #1a0f0d;border-radius:10px;padding:40px 25px 20px;display:flex;flex-wrap:wrap;gap:20px;min-height:240px;box-shadow:inset 0 15px 25px rgba(0,0,0,.7)}
+.vinilo-sleeve{width:165px;height:165px;border-radius:6px;position:relative;cursor:grab;box-shadow:-5px 5px 12px rgba(0,0,0,.6);transition:transform .35s ease;display:flex;flex-direction:column;justify-content:space-between;padding:12px;box-sizing:border-box;color:#fff;border:2px solid rgba(255,255,255,.25);
   background-image:linear-gradient(135deg,rgba(255,255,255,.22) 0%,transparent 45%,rgba(0,0,0,.2) 100%)}
 .vinilo-sleeve:active{cursor:grabbing}
-.vinilo-disco-asomado{position:absolute;top:8px;right:2px;width:124px;height:124px;border-radius:50%;z-index:0;transition:transform .45s ease;pointer-events:none;box-shadow:0 0 8px rgba(0,0,0,.8);background:#111}
-.surco{width:100%;height:100%;border-radius:50%;background:radial-gradient(circle,#fff8e7 12%,#ff5722 14%,#ff5722 26%,#111 28%,transparent 30%),conic-gradient(transparent 0 20%,rgba(255,255,255,.14) 25%,transparent 30% 70%,rgba(255,255,255,.14) 75%,transparent 80%),repeating-radial-gradient(#111 0 2px,#242424 3px 4px)}
+.vinilo-disco-asomado{position:absolute;top:9px;right:2px;width:147px;height:147px;border-radius:50%;z-index:0;transition:transform .45s ease;pointer-events:none;box-shadow:0 0 8px rgba(0,0,0,.8);background:#111}
+.surco{width:100%;height:100%;border-radius:50%;background:radial-gradient(circle,#ffffff 12%,#e4e4e4 14%,#e4e4e4 26%,#111 28%,transparent 30%),conic-gradient(transparent 0 20%,rgba(255,255,255,.14) 25%,transparent 30% 70%,rgba(255,255,255,.14) 75%,transparent 80%),repeating-radial-gradient(#111 0 2px,#242424 3px 4px)}
 .vinilo-portada{position:relative;z-index:1;height:100%;display:flex;flex-direction:column;justify-content:space-between;pointer-events:none}
 .vinilo-sleeve:hover{transform:translateY(-22px) rotate(-2deg);z-index:10}
-.vinilo-sleeve:hover .vinilo-disco-asomado{transform:translateX(42px)}
+.vinilo-sleeve:hover .vinilo-disco-asomado{transform:translateX(50px)}
 .vinilo-sleeve:hover .surco{animation:girar 2s linear infinite}
 
 /* CDs */
-.estante-cds{background:#d7ccc8;border:6px solid #8d6e63;border-bottom:16px solid #5d4037;border-radius:8px;padding:30px 20px 0;display:flex;flex-wrap:wrap;align-items:flex-end;gap:8px;min-height:170px;box-shadow:inset 0 10px 20px rgba(0,0,0,.2)}
-.cd-spine{width:36px;height:150px;border-radius:3px;cursor:grab;position:relative;transition:transform .3s ease;display:flex;align-items:center;justify-content:center;border-left:6px solid rgba(255,255,255,.75);border-right:1px solid rgba(0,0,0,.3);box-shadow:3px 0 6px rgba(0,0,0,.35);
+.estante-cds{background:#d7ccc8;border:6px solid #8d6e63;border-bottom:16px solid #5d4037;border-radius:8px;padding:30px 20px 0;display:flex;flex-wrap:wrap;align-items:flex-end;gap:10px;min-height:240px;box-shadow:inset 0 10px 20px rgba(0,0,0,.2)}
+.cd-spine{width:42px;height:185px;border-radius:3px;cursor:grab;position:relative;transition:transform .3s ease;display:flex;align-items:center;justify-content:center;border-left:6px solid rgba(255,255,255,.75);border-right:1px solid rgba(0,0,0,.3);box-shadow:3px 0 6px rgba(0,0,0,.35);
   background-image:linear-gradient(90deg,rgba(255,255,255,.2),transparent 50%,rgba(0,0,0,.15))}
 .cd-spine:active{cursor:grabbing}
-.cd-spine span{writing-mode:vertical-rl;transform:rotate(180deg);font-size:.78rem;font-weight:bold;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-height:130px;color:#fff;text-shadow:1px 1px 2px rgba(0,0,0,.7);pointer-events:none}
+.cd-spine span{writing-mode:vertical-rl;transform:rotate(180deg);font-size:.78rem;font-weight:bold;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-height:160px;color:#fff;text-shadow:1px 1px 2px rgba(0,0,0,.7);pointer-events:none}
 .cd-spine:hover{transform:translateY(-25px) scale(1.06);z-index:10}
 
 /* Cassettes */
-.caja-cassettes{background:#b59367;border:10px solid #8c673e;border-radius:8px;padding:18px;display:grid;grid-template-columns:repeat(auto-fill,minmax(42px,1fr));gap:10px;min-height:150px;box-shadow:inset 0 0 18px rgba(38,24,21,.6)}
-.cassette-slot{background:#5d4037;border-radius:4px;padding:4px;height:130px;display:flex;align-items:center;justify-content:center;position:relative;box-shadow:inset 0 3px 5px rgba(0,0,0,.5)}
+.caja-cassettes{background:#b59367;border:10px solid #8c673e;border-radius:8px;padding:18px;display:grid;grid-template-columns:repeat(auto-fill,64px);justify-content:start;gap:12px;min-height:200px;box-shadow:inset 0 0 18px rgba(38,24,21,.6)}
+.cassette-slot{background:#5d4037;border-radius:4px;padding:4px;height:170px;display:flex;align-items:center;justify-content:center;position:relative;box-shadow:inset 0 3px 5px rgba(0,0,0,.5)}
 .cassette-spine{width:100%;height:100%;border-radius:3px;cursor:grab;display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding:8px 3px;box-sizing:border-box;transition:transform .3s ease,box-shadow .3s ease;border:1px solid rgba(0,0,0,.4)}
 .cassette-spine:active{cursor:grabbing}
-.cassette-spine span{writing-mode:vertical-rl;font-size:.75rem;font-weight:bold;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-height:95px;pointer-events:none}
+.cassette-spine span{writing-mode:vertical-rl;font-size:.75rem;font-weight:bold;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-height:130px;pointer-events:none}
 .cassette-ventana{width:10px;height:18px;background:#111;border:1px solid rgba(255,255,255,.4);border-radius:2px;margin:2px 0;pointer-events:none}
 .cassette-logo{font-size:.5rem;background:rgba(255,255,255,.85);color:#000;padding:1px 4px;border-radius:2px;font-weight:bold;pointer-events:none}
 .cassette-spine:hover{transform:translateY(-18px) scale(1.1);box-shadow:0 12px 18px rgba(0,0,0,.5);z-index:10}
@@ -90,7 +91,7 @@ button.btn-accion:active{transform:translateY(2px);box-shadow:0 1px 0 rgba(0,0,0
 
 /* Tornamesa (vinilo) */
 .tt{position:relative;width:210px;height:140px;background:linear-gradient(135deg,#8c673e,#5d4037);border:3px solid #261815;border-radius:8px;box-shadow:inset 0 0 12px rgba(0,0,0,.5)}
-.platter{position:absolute;left:12px;top:10px;width:116px;height:116px;border-radius:50%;box-shadow:0 0 0 4px #1a0f0d,0 4px 10px rgba(0,0,0,.6);
+.platter{position:absolute;left:12px;top:10px;width:116px;height:116px;border-radius:50%;box-shadow:0 0 0 4px #1a0f0d,0 0 12px 4px rgba(0,0,0,.5);
   background:radial-gradient(circle,#fff8e7 0 3%,var(--c) 4% 22%,#fff8e7 23% 25%,transparent 26%),conic-gradient(transparent 0 20%,rgba(255,255,255,.16) 25%,transparent 30% 70%,rgba(255,255,255,.16) 75%,transparent 80%),repeating-radial-gradient(#111 0 2px,#262626 3px 4px)}
 .brazo{position:absolute;top:12px;right:26px;width:6px;height:98px;background:linear-gradient(90deg,#eee,#999);border-radius:3px;transform-origin:3px 5px;transform:rotate(-4deg);transition:transform 1.4s ease}
 .brazo::before{content:"";position:absolute;top:-6px;left:-7px;width:20px;height:20px;border-radius:50%;background:#bbb;border:2px solid #555}
@@ -98,8 +99,8 @@ button.btn-accion:active{transform:translateY(2px);box-shadow:0 1px 0 rgba(0,0,0
 .visual.sonando .brazo{transform:rotate(30deg)}
 
 /* CD */
-.cd-real{position:relative;width:120px;height:120px;border-radius:50%;border:2px solid #aaa;box-shadow:0 4px 12px rgba(0,0,0,.5);
-  background:radial-gradient(circle,transparent 0 14%,rgba(255,255,255,.5) 15% 22%,transparent 23%),conic-gradient(#e8e8e8,#a8e6ff,#ffd1f0,#e8e8e8,#b6ffd8,#fff3a8,#e8e8e8,#a8b8ff,#e8e8e8)}
+.cd-real{position:relative;box-sizing:border-box;width:120px;height:120px;border-radius:50%;border:2px solid #aaa;box-shadow:0 0 14px rgba(0,0,0,.45);
+  background:radial-gradient(circle,transparent 0 14%,rgba(255,255,255,.5) 15% 22%,transparent 23%),repeating-conic-gradient(#e8e8e8 0deg,#a8e6ff 45deg,#ffd1f0 90deg,#b6ffd8 135deg,#e8e8e8 180deg)}
 .cd-real i{position:absolute;left:50%;top:50%;width:24px;height:24px;margin:-12px;border-radius:50%;background:#f4ebd9;border:2px solid #aaa}
 .cd-real::after{content:"";position:absolute;inset:0;border-radius:50%;background:linear-gradient(var(--c),var(--c));opacity:.18}
 
@@ -144,45 +145,189 @@ button.btn-accion:active{transform:translateY(2px);box-shadow:0 1px 0 rgba(0,0,0
 .btn-restaurar{background:#2e7d32;color:#fff;border:none;padding:6px 10px;border-radius:4px;cursor:pointer;font-family:inherit;font-size:.75rem;font-weight:bold;transition:transform .2s}
 .btn-restaurar:hover{transform:scale(1.1) rotate(-3deg)}
 
+.mueble-titulo small{font-weight:normal;opacity:.6}
+/* Botón nuevo + panel desplegable */
+.barra-nueva{display:flex;justify-content:center;margin:5px 0 18px}
+.btn-nuevo{background:#b8862b;color:#fff8e7;border:none;padding:14px 34px;font-family:inherit;font-weight:bold;font-size:1rem;border-radius:30px;cursor:pointer;box-shadow:0 4px 0 #7a561a;transition:transform .2s,box-shadow .2s,background .2s;animation:pulso 2.4s ease-out infinite}
+.btn-nuevo:hover{background:#a47520;transform:translateY(-3px);box-shadow:0 7px 0 #7a561a}
+.btn-nuevo:active{transform:translateY(3px);box-shadow:0 1px 0 #7a561a}
+.btn-nuevo.abierto{animation:none}
+.btn-nuevo .mas{display:inline-block;margin-right:10px;font-size:1.3rem;line-height:1;transition:transform .5s cubic-bezier(.3,1.5,.5,1)}
+.btn-nuevo.abierto .mas{transform:rotate(135deg)}
+@keyframes pulso{0%{box-shadow:0 4px 0 #7a561a,0 0 0 0 rgba(184,134,43,.55)}70%,100%{box-shadow:0 4px 0 #7a561a,0 0 0 16px rgba(184,134,43,0)}}
+.panel-form{display:grid;grid-template-rows:0fr;visibility:hidden;transition:grid-template-rows .6s ease,margin .6s ease,visibility 0s linear .6s}
+.panel-form.abierto{grid-template-rows:1fr;visibility:visible;margin-bottom:28px;transition-delay:0s}
+.panel-interior{overflow:hidden;min-height:0;padding:0 6px}
+.panel-form.abierto .campo,.panel-form.abierto .btn-full{animation:entra .5s ease backwards;animation-delay:calc(var(--k,0) * 60ms)}
+#formRecuerdo{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:0 24px}
+.ancho{grid-column:1/-1}
+/* Selector RGB */
+.rgb{display:flex;gap:20px;align-items:center;flex-wrap:wrap}
+.rgb-vista{width:84px;height:84px;border-radius:10px;border:2px solid #5d4037;box-shadow:3px 3px 0 #8d6e63;transition:background .15s}
+.rgb-vista.tick{animation:tick .25s ease}
+@keyframes tick{50%{transform:scale(1.12) rotate(-4deg)}}
+.rgb-ctrl{flex:1;min-width:220px;max-width:420px}
+.rgb-fila{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+.rgb-fila b{width:16px}
+.rgb-fila output{width:30px;text-align:right;font-size:.75rem}
+.rgb-fila input[type=range]{flex:1;-webkit-appearance:none;appearance:none;height:12px;padding:0;border-radius:6px;border:1px solid #8d6e63;cursor:pointer}
+.rgb-fila input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:20px;height:20px;border-radius:50%;background:#fff8e7;border:3px solid #3e2723;transition:transform .15s}
+.rgb-fila input[type=range]::-moz-range-thumb{width:14px;height:14px;border-radius:50%;background:#fff8e7;border:3px solid #3e2723}
+.rgb-fila input[type=range]:hover::-webkit-slider-thumb{transform:scale(1.25)}
+.rgb-hex{width:96px;text-align:center}
+/* Recuerdo nuevo cae al estante */
+@keyframes cae{0%{opacity:0;transform:translateY(-170px) rotate(-10deg)}60%{opacity:1;transform:translateY(12px) rotate(3deg)}80%{transform:translateY(-6px)}100%{transform:none}}
+.nuevo{animation:cae .9s ease}
+
+body{transition:background-color .5s,color .5s}
+.formulario-caja,.mueble-contenedor,.modal-contenido,.estante-cds,.reproductor-box,.papelera-item,.trash-bin,input,select,textarea{transition:background-color .5s,border-color .5s,color .5s}
+.btn-tema{position:fixed;top:16px;right:16px;z-index:95;display:flex;align-items:center;gap:8px;background:#fff8e7;color:#5d4037;border:2px solid #8d6e63;border-radius:30px;padding:7px 14px;font-family:inherit;font-weight:bold;font-size:.8rem;cursor:pointer;box-shadow:3px 3px 0 #8d6e63;transition:transform .2s,box-shadow .2s,background .5s,color .5s,border-color .5s}
+.btn-tema:hover{transform:translateY(-2px)}
+.btn-tema:active{transform:translateY(2px);box-shadow:0 0 0 #8d6e63}
+.icono-tema{width:16px;height:16px;border-radius:50%;box-shadow:inset -5px -3px 0 0 currentColor;transition:transform .7s cubic-bezier(.3,1.5,.5,1),box-shadow .5s,background .5s}
+/* Modo oscuro */
+body.oscuro{color-scheme:dark;background-color:#1c1411;background-image:radial-gradient(rgba(255,255,255,.05) 1px,transparent 1px);color:#eadfce}
+body.oscuro h1,body.oscuro .mueble-titulo,body.oscuro .modal-contenido h2{color:#f1e3cc!important}
+body.oscuro h1{text-shadow:2px 2px 0 #000}
+body.oscuro header{border-bottom-color:#6d4c41}
+body.oscuro .formulario-caja,body.oscuro .mueble-contenedor,body.oscuro .modal-contenido{background:#2a1d18;border-color:#6d4c41;box-shadow:5px 5px 0 #000;color:#eadfce}
+body.oscuro input,body.oscuro select,body.oscuro textarea{background:#1c1411;color:#eadfce;border-color:#6d4c41}
+body.oscuro .estante-cds{background:#4a3a33;border-color:#6d4c41;border-bottom-color:#3a2a23}
+body.oscuro .estante-cds .vacio-msg{color:#cdb9a8!important}
+body.oscuro .caja-cassettes{background:#7a5f3d;border-color:#5a4429}
+body.oscuro .reproductor-box,body.oscuro .papelera-item{background:#352621;border-color:#6d4c41}
+body.oscuro .modal-contenido p,body.oscuro .modal-contenido small{color:#c9b8a6!important}
+body.oscuro .preview-card{background:#3a2a23;color:#eadfce;border-color:#8d6e63;box-shadow:4px 4px 0 #000}
+body.oscuro .preview-card small{color:#c9b8a6!important}
+body.oscuro .trash-bin{background:#2a1d18;border-color:#8d6e63;box-shadow:4px 4px 0 #000}
+body.oscuro .trash-bin-text{color:#eadfce}
+body.oscuro .trash-bin:hover{background:#3a2a23}
+body.oscuro .trash-bin.drag-over{background:#4a2020;border-color:#ef5350}
+body.oscuro .btn-tema{background:#2a1d18;color:#ffe082;border-color:#6d4c41;box-shadow:3px 3px 0 #000}
+body.oscuro .icono-tema{background:#ffe082;box-shadow:0 0 10px 3px rgba(255,224,130,.7);transform:rotate(360deg)}
+body.oscuro .nota{color:#ffb74d}
+
+/* ===== Formulario compacto, cálido e interactivo ===== */
+.formulario-caja{position:relative;max-width:860px;margin:0 auto 6px;padding:22px 22px 16px;background:linear-gradient(160deg,#6d4c41,#3e2723);border:2px solid #8d6e63;box-shadow:5px 5px 0 #261815;color:#fff8e7}
+.formulario-caja::before{content:"";position:absolute;top:8px;left:22px;right:22px;height:4px;border-radius:2px;opacity:.85;background-image:linear-gradient(90deg,#ffc107 65%,transparent 65%);background-size:18px 100%;animation:marcha 1.2s linear infinite}
+@keyframes marcha{to{background-position:18px 0}}
+.formulario-caja h3{margin:6px 0 12px;color:#ffe082;font-size:1.05rem}
+.formulario-caja label{color:#ffe082;font-size:.75rem;margin-bottom:3px;transition:transform .25s,color .25s}
+.formulario-caja .campo{margin-bottom:9px}
+.formulario-caja .campo:focus-within>label{color:#fff;transform:translateX(4px)}
+.formulario-caja input:not([type=radio]):not([type=range]),.formulario-caja textarea{background:#fff8e7;color:#3e2723;border:1px solid #8d6e63;padding:6px 9px;font-size:.82rem;transition:transform .2s,box-shadow .25s,border-color .25s}
+.formulario-caja input:focus,.formulario-caja textarea:focus{border-color:#ffc107;box-shadow:0 0 0 3px rgba(255,193,7,.3);transform:translateY(-1px)}
+#formRecuerdo{grid-template-columns:repeat(6,1fr);gap:0 16px}
+.c2{grid-column:span 2}.c3{grid-column:span 3}
+.c3 textarea{flex:1;min-height:100px;resize:vertical}
+@media (max-width:700px){#formRecuerdo{grid-template-columns:1fr}.c2,.c3{grid-column:1/-1}}
+/* Selector de formato tipo interruptor */
+.segmentos{position:relative;display:flex;background:#2a1a15;border:1px solid #8d6e63;border-radius:20px;padding:3px;overflow:hidden}
+.segmentos input{position:absolute;opacity:0;pointer-events:none;width:0;height:0}
+.segmentos label{position:relative;z-index:1;flex:1;text-align:center;margin:0!important;padding:6px 0;font-size:.78rem!important;color:#d7ccc8!important;cursor:pointer;transition:color .3s}
+.segmentos label:hover{color:#fff!important}
+.segmentos input:checked+label{color:#3e2723!important}
+.segmento-fondo{position:absolute;top:3px;bottom:3px;left:3px;width:calc((100% - 6px) / 3);border-radius:16px;background:linear-gradient(180deg,#ffd54f,#ffb300);box-shadow:0 2px 4px rgba(0,0,0,.4);transition:transform .45s cubic-bezier(.3,1.5,.5,1)}
+#f-cd:checked~.segmento-fondo{transform:translateX(100%)}
+#f-cassette:checked~.segmento-fondo{transform:translateX(200%)}
+/* Botón guardar */
+button.btn-guardar{position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;gap:10px;padding:11px;margin-top:4px;background:linear-gradient(180deg,#e8632c,#c23a0c);box-shadow:0 4px 0 #7a2208}
+button.btn-guardar:hover{background:linear-gradient(180deg,#f0722f,#d04410);box-shadow:0 6px 0 #7a2208;transform:translateY(-2px)}
+button.btn-guardar:active{transform:translateY(3px);box-shadow:0 1px 0 #7a2208}
+button.btn-guardar::after{content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.35),transparent);transform:skewX(-20deg);transition:left .6s}
+button.btn-guardar:hover::after{left:130%}
+.mini-disco{width:18px;height:18px;border-radius:50%;background:radial-gradient(circle,#fff 0 18%,#ddd 20% 34%,transparent 36%),conic-gradient(#111,#444,#111,#444,#111);animation:girar 3s linear infinite}
+button.btn-guardar:hover .mini-disco{animation-duration:.6s}
+/* Selector RGB: vista previa de vinilo + faders */
+.rgb{gap:16px}
+.rgb-vista{position:relative;width:92px;height:68px;flex-shrink:0;border:none;box-shadow:none;background:none}
+.v-funda{position:absolute;left:0;top:0;width:68px;height:68px;border-radius:6px;border:2px solid rgba(0,0,0,.5);box-shadow:3px 3px 8px rgba(0,0,0,.4);z-index:1;background-image:linear-gradient(135deg,rgba(255,255,255,.28),transparent 50%,rgba(0,0,0,.2))}
+.v-disco{position:absolute;right:0;top:4px;width:60px;height:60px;border-radius:50%;animation:girar 4s linear infinite;background:radial-gradient(circle,#fff 0 12%,#e4e4e4 14% 26%,#111 28%,transparent 30%),conic-gradient(transparent 0 20%,rgba(255,255,255,.18) 25%,transparent 30% 70%,rgba(255,255,255,.18) 75%,transparent 80%),repeating-radial-gradient(#111 0 2px,#262626 3px 4px)}
+.rgb:hover .v-disco{animation-duration:1.6s}
+.rgb-ctrl{min-width:200px;max-width:330px}
+.rgb-fila{margin-bottom:6px;gap:8px}
+.rgb-fila input[type=range]{height:14px;border:2px solid #261815;box-shadow:inset 0 2px 4px rgba(0,0,0,.45)}
+.rgb-fila input[type=range]::-webkit-slider-thumb{width:24px;height:24px;border:2px solid #261815;background:radial-gradient(circle at 35% 30%,#fff,#e0d3c4 55%,#9c8272);box-shadow:0 3px 5px rgba(0,0,0,.5);transition:transform .15s,box-shadow .15s}
+.rgb-fila input[type=range]::-moz-range-thumb{width:18px;height:18px;border:2px solid #261815;background:radial-gradient(circle at 35% 30%,#fff,#e0d3c4 55%,#9c8272);box-shadow:0 3px 5px rgba(0,0,0,.5)}
+.rgb-fila input[type=range]:hover::-webkit-slider-thumb{transform:scale(1.15)}
+.rgb-fila input[type=range]:active::-webkit-slider-thumb{transform:scale(1.3);box-shadow:0 0 0 5px rgba(255,255,255,.35),0 3px 6px rgba(0,0,0,.5)}
+.rgb-fila output{width:34px;text-align:center;background:#1a0f0d;color:#ffe082;border-radius:4px;padding:2px 0;font-size:.72rem;box-shadow:inset 0 1px 3px #000}
+body.oscuro .formulario-caja{background:linear-gradient(160deg,#3a2a23,#241915)}
+body.oscuro .formulario-caja input:not([type=radio]):not([type=range]),body.oscuro .formulario-caja textarea{background:#1c1411;color:#eadfce}
+
+/* Vista previa según formato */
+.rgb-vista{width:100px;height:76px}
+.pv{position:absolute;inset:0;display:none}
+.rgb-vista[data-f=vinilo] .pv-vinilo,.rgb-vista[data-f=cd] .pv-cd,.rgb-vista[data-f=cassette] .pv-cassette{display:block;animation:pop .4s cubic-bezier(.3,1.5,.5,1)}
+.v-funda{top:4px;background-color:var(--c,#d84315)}
+.v-disco{top:8px}
+.cd-caja{position:absolute;left:0;top:4px;width:66px;height:66px;box-sizing:border-box;border-radius:3px;z-index:1;border:3px solid rgba(255,255,255,.8);background-color:var(--c,#d84315);box-shadow:3px 3px 8px rgba(0,0,0,.4);background-image:linear-gradient(135deg,rgba(255,255,255,.3),transparent 45%,rgba(0,0,0,.2))}
+.cd-caja::before{content:"";position:absolute;left:-3px;top:-3px;bottom:-3px;width:9px;background:rgba(20,10,8,.55);border-radius:2px 0 0 2px;box-shadow:inset -1px 0 0 rgba(255,255,255,.5)}
+.cd-caja::after{content:"";position:absolute;inset:0;background:linear-gradient(115deg,transparent 40%,rgba(255,255,255,.4) 48%,transparent 56%)}
+.cd-disco{position:absolute;right:2px;top:10px;width:58px;height:58px;box-sizing:border-box;border-radius:50%;border:1px solid #aaa;animation:girar 3s linear infinite;background:radial-gradient(circle,#f4ebd9 0 14%,#aaa 15% 17%,transparent 18%),repeating-conic-gradient(#e8e8e8 0deg,#a8e6ff 45deg,#ffd1f0 90deg,#b6ffd8 135deg,#e8e8e8 180deg)}
+.cm{position:absolute;left:6px;top:9px;width:88px;height:58px;box-sizing:border-box;border-radius:5px;border:2px solid #1a0f0d;background-color:var(--c,#d84315);background-image:linear-gradient(135deg,rgba(255,255,255,.28),transparent 50%,rgba(0,0,0,.2));box-shadow:3px 3px 8px rgba(0,0,0,.4)}
+.cm-label{position:absolute;top:4px;left:7px;right:7px;height:15px;background:#fff8e7;border-radius:2px}
+.cm-ventana{position:absolute;top:23px;left:14px;right:14px;height:18px;background:#1a0f0d;border-radius:9px;display:flex;justify-content:space-between;align-items:center;padding:0 4px;border:1px solid rgba(255,255,255,.3)}
+.cm-reel{display:block;width:12px;height:12px;border-radius:50%;animation:girar 1.4s linear infinite;background:radial-gradient(circle,#111 0 20%,transparent 22%),repeating-conic-gradient(#f0f0f0 0 25deg,#666 0 60deg)}
+.cm-cinta{position:absolute;bottom:0;left:16px;right:16px;height:8px;background:rgba(0,0,0,.35);border-radius:3px 3px 0 0}
+/* Botón guardar en tono pergamino / dorado */
+button.btn-guardar{background:linear-gradient(180deg,#fff3d6,#e8cf9c);color:#3e2723;box-shadow:0 4px 0 #a98a52}
+button.btn-guardar:hover{background:linear-gradient(180deg,#ffe082,#ffc107);box-shadow:0 6px 0 #a67c00;transform:translateY(-2px)}
+button.btn-guardar:active{box-shadow:0 1px 0 #a67c00;transform:translateY(3px)}
+button.btn-guardar::after{background:linear-gradient(100deg,transparent,rgba(255,193,7,.6),transparent)}
+
+/* ===== CD rediseñado: simétrico, con hueco real y aro de color ===== */
+.cd-real{background:none;border:none;box-shadow:none;border-radius:50%;filter:drop-shadow(0 0 7px rgba(0,0,0,.45))}
+.cd-real::after{display:none}
+.cd-real i{position:absolute;left:0;top:0;right:0;bottom:0;width:auto;height:auto;margin:0;box-sizing:border-box;border-radius:50%;border:2px solid #b9c0c6;
+  background:radial-gradient(circle closest-side,transparent 0 13%,rgba(255,255,255,.9) 13% 14.5%,rgba(255,255,255,.35) 14.5% 27%,rgba(110,120,130,.55) 27% 28%,transparent 28% 29%,var(--c) 29% 31%,transparent 31%),conic-gradient(rgba(255,255,255,.6) 0deg,transparent 25deg,transparent 155deg,rgba(255,255,255,.6) 180deg,transparent 205deg,transparent 335deg,rgba(255,255,255,.6) 360deg),repeating-conic-gradient(#eef2f5 0deg,#b8ecff 22.5deg,#ffd9f1 45deg,#b8ecff 67.5deg,#eef2f5 90deg);
+  -webkit-mask:radial-gradient(circle closest-side,transparent 0 12.5%,#000 13%);mask:radial-gradient(circle closest-side,transparent 0 12.5%,#000 13%)}
+.cd-disco{border-color:#b9c0c6;
+  background:radial-gradient(circle closest-side,transparent 0 13%,rgba(255,255,255,.9) 13% 16%,rgba(255,255,255,.35) 16% 28%,transparent 28.5%),conic-gradient(rgba(255,255,255,.6) 0deg,transparent 25deg,transparent 155deg,rgba(255,255,255,.6) 180deg,transparent 205deg,transparent 335deg,rgba(255,255,255,.6) 360deg),repeating-conic-gradient(#eef2f5 0deg,#b8ecff 22.5deg,#ffd9f1 45deg,#b8ecff 67.5deg,#eef2f5 90deg);
+  -webkit-mask:radial-gradient(circle closest-side,transparent 0 12.5%,#000 13%);mask:radial-gradient(circle closest-side,transparent 0 12.5%,#000 13%)}
+
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
 </head>
 <body>
+<button type="button" class="btn-tema" id="btnTema" onclick="alternarTema()"><span class="icono-tema"></span><span id="txtTema">Modo oscuro</span></button>
 
+<div class="contenido">
 <header>
   <span class="nota">♪</span><span class="nota">♫</span><span class="nota">♪</span>
   <div class="titulo-fila"><div class="logo-disco"></div><h1>Spinning Memories</h1></div>
-  <p>Elige una categoría para explorar tu estante, haz clic en un disco para ver tu diario, o arrástralo a la papelera.</p>
+  <p>Haz clic en un disco para ver tu diario, o arrástralo a la papelera.</p>
 </header>
 
-<div class="sala-principal">
-  <div class="formulario-caja">
-    <h3>✨ Nuevo Recuerdo</h3>
-    <form id="formRecuerdo">
-      <div class="campo"><label>¿Dónde lo guardamos?</label>
-        <select id="formato"><option value="vinilo">⚫ Cajón de Vinilos</option><option value="cd">💿 Estante de CDs</option><option value="cassette">📼 Caja de Cassettes</option></select></div>
-      <div class="campo"><label>Color de funda / etiqueta:</label>
-        <select id="color"><option value="#d84315">Terracota / Naranja</option><option value="#2e7d32">Verde Bosque</option><option value="#1565c0">Azul Cobalto</option><option value="#f9a825">Amarillo Mostaza</option><option value="#6a1b9a">Morado Vintage</option><option value="#37474f">Gris Pizarra</option></select></div>
-      <div class="campo"><label>Título del recuerdo:</label><input type="text" id="titulo" placeholder="Ej. Tarde de café" required></div>
-      <div class="campo"><label>Fecha:</label><input type="date" id="fecha" required></div>
-      <div class="campo"><label>Canción y artista:</label><input type="text" id="cancion" placeholder="Ej. Put Your Records On" required></div>
-      <div class="campo"><label>Link de Spotify o Apple Music:</label><input type="url" id="linkMusica" placeholder="https://open.spotify.com/..."></div>
-      <div class="campo"><label>Nota del diario:</label><textarea id="nota" rows="3" placeholder="¿Qué pasó este día?" required></textarea></div>
-      <button type="submit" class="btn-accion btn-full">Guardar en la colección</button>
-    </form>
-  </div>
+<div class="barra-nueva">
+  <button type="button" class="btn-nuevo" id="btnNuevo" onclick="alternarFormulario()"><span class="mas">+</span><span id="txtBtnNuevo">Nuevo recuerdo</span></button>
+</div>
 
-  <div class="coleccion-zona">
-    <div class="pestanas-coleccion">
-      <button class="btn-pestana activo" onclick="cambiarFormato('vinilo')" id="tabVinilo">⚫ Vinilos</button>
-      <button class="btn-pestana" onclick="cambiarFormato('cd')" id="tabCd">💿 CDs</button>
-      <button class="btn-pestana" onclick="cambiarFormato('cassette')" id="tabCassette">📼 Cassettes</button>
-    </div>
-    <div class="mueble-contenedor">
-      <h3 class="mueble-titulo" id="tituloMueble">⚫ Cajón de Vinilos</h3>
-      <div id="estanteActivo"></div>
-    </div>
-  </div>
+<div class="panel-form" id="panelForm"><div class="panel-interior"><div class="formulario-caja">
+  <h3 style="margin-top:0">Nuevo recuerdo</h3>
+  <form id="formRecuerdo">
+    <div class="campo c2"><label>Dónde lo guardamos:</label>
+      <div class="segmentos">
+        <input type="radio" name="formato" id="f-vinilo" value="vinilo" checked><label for="f-vinilo">Vinilo</label>
+        <input type="radio" name="formato" id="f-cd" value="cd"><label for="f-cd">CD</label>
+        <input type="radio" name="formato" id="f-cassette" value="cassette"><label for="f-cassette">Cassette</label>
+        <span class="segmento-fondo"></span>
+      </div></div>
+    <div class="campo c2"><label>Título del recuerdo:</label><input type="text" id="titulo" placeholder="Ej. Tarde de café" required></div>
+    <div class="campo c2"><label>Fecha:</label><input type="date" id="fecha" required></div>
+    <div class="campo c3"><label>Canción y artista:</label><input type="text" id="cancion" placeholder="Ej. Put Your Records On" required></div>
+    <div class="campo c3"><label>Link de Spotify o Apple Music:</label><input type="url" id="linkMusica" placeholder="https://open.spotify.com/..."></div>
+    <div class="campo c3"><label>Color de funda / etiqueta:</label><div id="selectorColor"></div></div>
+    <div class="campo c3"><label>Nota del diario:</label><textarea id="nota" rows="4" placeholder="¿Qué pasó este día?" required></textarea></div>
+    <button type="submit" class="btn-accion btn-full ancho btn-guardar"><span class="mini-disco"></span>Guardar en la colección</button>
+  </form>
+</div></div></div>
+
+<section class="coleccion-zona">
+  <div class="mueble-contenedor" id="bloque-vinilo" style="--b:0"><h3 class="mueble-titulo">⚫ Cajón de Vinilos <small>(<span id="cuenta-vinilo">0</span>)</small></h3><div id="estanteVinilo"></div></div>
+  <div class="mueble-contenedor" id="bloque-cd" style="--b:1"><h3 class="mueble-titulo">💿 Estante de CDs <small>(<span id="cuenta-cd">0</span>)</small></h3><div id="estanteCd"></div></div>
+  <div class="mueble-contenedor" id="bloque-cassette" style="--b:2"><h3 class="mueble-titulo">📼 Caja de Cassettes <small>(<span id="cuenta-cassette">0</span>)</small></h3><div id="estanteCassette"></div></div>
+</section>
 </div>
 
 <!-- TORNAMESA DE LA SALA -->
@@ -221,18 +366,17 @@ button.btn-accion:active{transform:translateY(2px);box-shadow:0 1px 0 rgba(0,0,0
     </div>
 
     <div id="vistaEdicion" style="display:none">
-      <h3 style="margin-top:0">✏️ Editando Recuerdo</h3>
+      <h3 style="margin-top:0">Editando recuerdo</h3>
       <div class="campo"><label>Formato:</label>
-        <select id="editFormato"><option value="vinilo">⚫ Cajón de Vinilos</option><option value="cd">💿 Estante de CDs</option><option value="cassette">📼 Caja de Cassettes</option></select></div>
-      <div class="campo"><label>Color:</label>
-        <select id="editColor"><option value="#d84315">Terracota / Naranja</option><option value="#2e7d32">Verde Bosque</option><option value="#1565c0">Azul Cobalto</option><option value="#f9a825">Amarillo Mostaza</option><option value="#6a1b9a">Morado Vintage</option><option value="#37474f">Gris Pizarra</option></select></div>
+        <select id="editFormato"><option value="vinilo">Vinilo</option><option value="cd">CD</option><option value="cassette">Cassette</option></select></div>
+      <div class="campo"><label>Color:</label><div id="editSelectorColor"></div></div>
       <div class="campo"><label>Título:</label><input type="text" id="editTitulo"></div>
       <div class="campo"><label>Fecha:</label><input type="date" id="editFecha"></div>
       <div class="campo"><label>Canción y artista:</label><input type="text" id="editCancion"></div>
       <div class="campo"><label>Link de Spotify o Apple Music:</label><input type="url" id="editLinkMusica" placeholder="https://..."></div>
       <div class="campo"><label>Nota:</label><textarea id="editNota" rows="4"></textarea></div>
       <div class="modal-acciones">
-        <button class="btn-accion btn-editar" onclick="guardarEdicion()">💾 Guardar cambios</button>
+        <button class="btn-accion btn-editar" onclick="guardarEdicion()">Guardar cambios</button>
         <button class="btn-accion btn-cerrar" onclick="cancelarEdicion()">Cancelar</button>
       </div>
     </div>
@@ -255,7 +399,6 @@ button.btn-accion:active{transform:translateY(2px);box-shadow:0 1px 0 rgba(0,0,0
 <script>
 let recuerdos = JSON.parse(localStorage.getItem('misRecuerdosV12')) || [];
 let papelera = JSON.parse(localStorage.getItem('miPapeleraV12')) || [];
-let formatoActual = 'vinilo';
 let indiceActual = null;
 const form = document.getElementById('formRecuerdo');
 const trashBin = document.getElementById('trashBin');
@@ -269,12 +412,68 @@ function guardarEnStorage() {
   document.getElementById('contadorPapelera').innerText = papelera.length;
 }
 
-function cambiarFormato(nuevo) {
-  formatoActual = nuevo;
-  document.getElementById('tabVinilo').classList.toggle('activo', nuevo === 'vinilo');
-  document.getElementById('tabCd').classList.toggle('activo', nuevo === 'cd');
-  document.getElementById('tabCassette').classList.toggle('activo', nuevo === 'cassette');
-  renderizarColeccion(true);
+const ESTANTES = {
+  vinilo:   { id:'estanteVinilo',   clase:'rack-vinilos',   vacio:'Tu cajón de vinilos está vacío...',   vacioColor:'' },
+  cd:       { id:'estanteCd',       clase:'estante-cds',    vacio:'Aún no hay CDs en esta repisa...',    vacioColor:'#5d4037' },
+  cassette: { id:'estanteCassette', clase:'caja-cassettes', vacio:'Sin cassettes guardados...',          vacioColor:'#3e2723' }
+};
+
+// Elige texto claro u oscuro según qué tan claro sea el color de fondo
+function contraste(hex) {
+  const n = parseInt(hex.slice(1), 16);
+  const lum = (((n >> 16) * 299) + (((n >> 8) & 255) * 587) + ((n & 255) * 114)) / 1000;
+  return lum > 150 ? '#2b1a14' : '#fff';
+}
+
+/* ===== SELECTOR DE COLOR RGB (siempre visible) ===== */
+function selectorColor(cont, inicial) {
+  cont.className = 'rgb';
+  cont.innerHTML = `<div class="rgb-vista" data-f="vinilo"><div class="pv pv-vinilo"><i class="v-disco"></i><i class="v-funda"></i></div><div class="pv pv-cd"><i class="cd-disco"></i><i class="cd-caja"></i></div><div class="pv pv-cassette"><div class="cm"><i class="cm-label"></i><i class="cm-ventana"><b class="cm-reel"></b><b class="cm-reel"></b></i><i class="cm-cinta"></i></div></div></div><div class="rgb-ctrl">` +
+    ['r','g','b'].map(c => `<div class="rgb-fila"><b>${c.toUpperCase()}</b><input type="range" min="0" max="255" data-c="${c}"><output data-o="${c}"></output></div>`).join('') +
+    `<div class="rgb-fila"><b>#</b><input type="text" class="rgb-hex" maxlength="7" placeholder="#d84315"></div></div>`;
+  const vista = cont.querySelector('.rgb-vista'), funda = cont.querySelector('.v-funda'), hex = cont.querySelector('.rgb-hex');
+  const sl = {};
+  ['r','g','b'].forEach(c => sl[c] = cont.querySelector(`[data-c="${c}"]`));
+  const actual = () => '#' + ['r','g','b'].map(c => (+sl[c].value).toString(16).padStart(2, '0')).join('');
+  function pintar() {
+    const r = +sl.r.value, g = +sl.g.value, b = +sl.b.value;
+    vista.style.setProperty('--c', actual());
+    hex.value = actual();
+    sl.r.style.background = `linear-gradient(90deg,rgb(0,${g},${b}),rgb(255,${g},${b}))`;
+    sl.g.style.background = `linear-gradient(90deg,rgb(${r},0,${b}),rgb(${r},255,${b}))`;
+    sl.b.style.background = `linear-gradient(90deg,rgb(${r},${g},0),rgb(${r},${g},255))`;
+    ['r','g','b'].forEach(c => cont.querySelector(`[data-o="${c}"]`).value = sl[c].value);
+  }
+  function set(h) {
+    const n = parseInt(h.slice(1), 16);
+    sl.r.value = n >> 16; sl.g.value = (n >> 8) & 255; sl.b.value = n & 255;
+    pintar();
+  }
+  ['r','g','b'].forEach(c => sl[c].addEventListener('input', () => {
+    pintar();
+    vista.classList.remove('tick'); void vista.offsetWidth; vista.classList.add('tick');
+  }));
+  hex.addEventListener('input', () => { if (/^#[0-9a-f]{6}$/i.test(hex.value)) set(hex.value); });
+  set(inicial);
+  return { get: actual, set, setFormato: f => { vista.dataset.f = f; } };
+}
+const selColor = selectorColor(document.getElementById('selectorColor'), '#d84315');
+const selEdit = selectorColor(document.getElementById('editSelectorColor'), '#d84315');
+form.querySelectorAll('input[name=formato]').forEach(r => r.addEventListener('change', () => selColor.setFormato(r.value)));
+document.getElementById('editFormato').addEventListener('change', e => selEdit.setFormato(e.target.value));
+
+/* ===== FORMULARIO DESPLEGABLE ===== */
+const panelForm = document.getElementById('panelForm');
+const btnNuevo = document.getElementById('btnNuevo');
+document.querySelectorAll('#formRecuerdo .campo').forEach((c, i) => c.style.setProperty('--k', i));
+document.querySelector('#formRecuerdo .btn-full').style.setProperty('--k', 8);
+
+function alternarFormulario(abrir) {
+  const abre = abrir === undefined ? !panelForm.classList.contains('abierto') : abrir;
+  panelForm.classList.toggle('abierto', abre);
+  btnNuevo.classList.toggle('abierto', abre);
+  document.getElementById('txtBtnNuevo').innerText = abre ? 'Cerrar' : 'Nuevo recuerdo';
+  if (abre) setTimeout(() => document.getElementById('titulo').focus(), 600);
 }
 
 /* ===== DISCO / CD / CASSETTE ANIMADO (según el formato) ===== */
@@ -322,68 +521,57 @@ function previewHTML(item) {
   return `<div class="preview-card"><strong>${esc(item.titulo)}</strong><br><em>${esc(item.cancion)}</em><br><small style="color:#795548">${esc(item.fecha)}</small></div>`;
 }
 
-function renderizarColeccion(animar = false) {
-  const contenedor = document.getElementById('estanteActivo');
-  const tituloMueble = document.getElementById('tituloMueble');
-  contenedor.innerHTML = '';
+function renderizarColeccion(animar = false, nuevo = null) {
+  for (const f in ESTANTES) {
+    const e = ESTANTES[f];
+    const cont = document.getElementById(e.id);
+    cont.innerHTML = '';
+    const lista = recuerdos.map((item, i) => ({ ...item, originalIndex: i })).filter(it => it.formato === f);
+    document.getElementById('cuenta-' + f).innerText = lista.length;
 
-  const filtrados = recuerdos.map((item, i) => ({ ...item, originalIndex: i })).filter(it => it.formato === formatoActual);
-  const clase = animar ? ' entra' : '';
-
-  if (formatoActual === 'vinilo') {
-    tituloMueble.innerText = '⚫ Cajón de Vinilos';
-    const rack = document.createElement('div');
-    rack.className = 'rack-vinilos';
-    if (!filtrados.length) rack.innerHTML = '<div class="vacio-msg">Tu cajón de vinilos está vacío...</div>';
-    filtrados.forEach((item, n) => {
-      const div = document.createElement('div');
-      div.className = 'vinilo-sleeve' + clase;
-      div.style.setProperty('--i', n);
-      div.style.backgroundColor = item.color;
-      div.onclick = () => abrirModal(item.originalIndex);
-      div.innerHTML = `<div class="vinilo-disco-asomado"><div class="surco"></div></div>
-        <div class="vinilo-portada"><strong style="font-size:.85rem">${esc(item.titulo)}</strong><small style="font-size:.7rem;opacity:.9">${esc(item.fecha)}</small></div>${previewHTML(item)}`;
-      configurarArrastrable(div, item.originalIndex);
-      rack.appendChild(div);
-    });
-    contenedor.appendChild(rack);
-
-  } else if (formatoActual === 'cd') {
-    tituloMueble.innerText = '💿 Estante de CDs';
-    const estante = document.createElement('div');
-    estante.className = 'estante-cds';
-    if (!filtrados.length) estante.innerHTML = '<div class="vacio-msg" style="color:#5d4037">Aún no hay CDs en esta repisa...</div>';
-    filtrados.forEach((item, n) => {
-      const div = document.createElement('div');
-      div.className = 'cd-spine' + clase;
-      div.style.setProperty('--i', n);
-      div.style.backgroundColor = item.color;
-      div.onclick = () => abrirModal(item.originalIndex);
-      div.innerHTML = `<span>${esc(item.titulo)}</span>${previewHTML(item)}`;
-      configurarArrastrable(div, item.originalIndex);
-      estante.appendChild(div);
-    });
-    contenedor.appendChild(estante);
-
-  } else {
-    tituloMueble.innerText = '📼 Caja Organizadora de Cassettes';
     const caja = document.createElement('div');
-    caja.className = 'caja-cassettes';
-    if (!filtrados.length) caja.innerHTML = '<div class="vacio-msg" style="color:#3e2723">Sin cassettes guardados...</div>';
-    filtrados.forEach((item, n) => {
-      const slot = document.createElement('div');
-      slot.className = 'cassette-slot' + clase;
-      slot.style.setProperty('--i', n);
-      const spine = document.createElement('div');
-      spine.className = 'cassette-spine';
-      spine.style.backgroundColor = item.color;
-      spine.onclick = () => abrirModal(item.originalIndex);
-      spine.innerHTML = `<div class="cassette-logo">HI-FI</div><div class="cassette-ventana"></div><span>${esc(item.titulo)}</span>${previewHTML(item)}`;
-      configurarArrastrable(spine, item.originalIndex);
-      slot.appendChild(spine);
-      caja.appendChild(slot);
+    caja.className = e.clase;
+    if (!lista.length) caja.innerHTML = `<div class="vacio-msg" style="${e.vacioColor ? 'color:' + e.vacioColor : ''}">${e.vacio}</div>`;
+
+    lista.forEach((item, n) => {
+      const txt = contraste(item.color);
+      const sombra = txt === '#fff' ? '1px 1px 2px rgba(0,0,0,.7)' : 'none';
+      const clase = item.originalIndex === nuevo ? 'nuevo' : (animar ? 'entra' : '');
+      const el = document.createElement('div');
+      el.style.setProperty('--i', n);
+
+      if (f === 'vinilo') {
+        el.className = 'vinilo-sleeve ' + clase;
+        el.style.backgroundColor = item.color;
+        el.style.color = txt;
+        el.innerHTML = `<div class="vinilo-disco-asomado"><div class="surco"></div></div>
+          <div class="vinilo-portada"><strong style="font-size:.9rem;align-self:flex-start;background:${item.color};padding:2px 7px;border-radius:4px">${esc(item.titulo)}</strong><small style="font-size:.72rem;align-self:flex-start;background:${item.color};padding:1px 6px;border-radius:4px">${esc(item.fecha)}</small></div>${previewHTML(item)}`;
+        el.onclick = () => abrirModal(item.originalIndex);
+        configurarArrastrable(el, item.originalIndex);
+        caja.appendChild(el);
+
+      } else if (f === 'cd') {
+        el.className = 'cd-spine ' + clase;
+        el.style.backgroundColor = item.color;
+        el.innerHTML = `<span style="color:${txt};text-shadow:${sombra}">${esc(item.titulo)}</span>${previewHTML(item)}`;
+        el.onclick = () => abrirModal(item.originalIndex);
+        configurarArrastrable(el, item.originalIndex);
+        caja.appendChild(el);
+
+      } else {
+        const slot = document.createElement('div');
+        slot.className = 'cassette-slot ' + clase;
+        slot.style.setProperty('--i', n);
+        el.className = 'cassette-spine';
+        el.style.backgroundColor = item.color;
+        el.innerHTML = `<div class="cassette-logo">HI-FI</div><div class="cassette-ventana"></div><span style="color:${txt}">${esc(item.titulo)}</span>${previewHTML(item)}`;
+        el.onclick = () => abrirModal(item.originalIndex);
+        configurarArrastrable(el, item.originalIndex);
+        slot.appendChild(el);
+        caja.appendChild(slot);
+      }
     });
-    contenedor.appendChild(caja);
+    cont.appendChild(caja);
   }
   document.getElementById('contadorPapelera').innerText = papelera.length;
 }
@@ -457,10 +645,10 @@ function vaciarPapelera() {
 /* ===== CREAR RECUERDO ===== */
 form.addEventListener('submit', e => {
   e.preventDefault();
-  const formatoElegido = document.getElementById('formato').value;
+  const f = form.querySelector('input[name=formato]:checked').value;
   recuerdos.push({
-    formato: formatoElegido,
-    color: document.getElementById('color').value,
+    formato: f,
+    color: selColor.get(),
     titulo: document.getElementById('titulo').value,
     fecha: document.getElementById('fecha').value,
     cancion: document.getElementById('cancion').value,
@@ -469,7 +657,10 @@ form.addEventListener('submit', e => {
   });
   guardarEnStorage();
   form.reset();
-  cambiarFormato(formatoElegido);
+  selColor.setFormato('vinilo');
+  alternarFormulario(false);
+  renderizarColeccion(false, recuerdos.length - 1);
+  setTimeout(() => document.getElementById('bloque-' + f).scrollIntoView({ behavior: 'smooth', block: 'center' }), 350);
 });
 
 /* ===== MODAL Y TORNAMESA ===== */
@@ -518,7 +709,8 @@ function apagarTornamesa() {
 function activarEdicion() {
   const item = recuerdos[indiceActual];
   document.getElementById('editFormato').value = item.formato;
-  document.getElementById('editColor').value = item.color;
+  selEdit.set(item.color);
+  selEdit.setFormato(item.formato);
   document.getElementById('editTitulo').value = item.titulo;
   document.getElementById('editFecha').value = item.fecha;
   document.getElementById('editCancion').value = item.cancion;
@@ -534,7 +726,7 @@ function cancelarEdicion() {
 function guardarEdicion() {
   recuerdos[indiceActual] = {
     formato: document.getElementById('editFormato').value,
-    color: document.getElementById('editColor').value,
+    color: selEdit.get(),
     titulo: document.getElementById('editTitulo').value,
     fecha: document.getElementById('editFecha').value,
     cancion: document.getElementById('editCancion').value,
@@ -542,7 +734,7 @@ function guardarEdicion() {
     nota: document.getElementById('editNota').value
   };
   guardarEnStorage();
-  cambiarFormato(recuerdos[indiceActual].formato);
+  renderizarColeccion();
   abrirModal(indiceActual);
 }
 function eliminarDesdeModal() {
@@ -561,6 +753,17 @@ function cerrarModal() {
 document.addEventListener('keydown', e => {
   if (e.key === 'Escape') { cerrarModal(); cerrarPapelera(); }
 });
+
+/* ===== MODO OSCURO ===== */
+function aplicarTema(oscuro) {
+  document.body.classList.toggle('oscuro', oscuro);
+  document.getElementById('txtTema').innerText = oscuro ? 'Modo claro' : 'Modo oscuro';
+  try { localStorage.setItem('temaSpinning', oscuro ? 'oscuro' : 'claro'); } catch (e) {}
+}
+function alternarTema() { aplicarTema(!document.body.classList.contains('oscuro')); }
+let temaGuardado = null;
+try { temaGuardado = localStorage.getItem('temaSpinning'); } catch (e) {}
+aplicarTema(temaGuardado ? temaGuardado === 'oscuro' : window.matchMedia('(prefers-color-scheme: dark)').matches);
 
 renderizarColeccion(true);
 </script>
